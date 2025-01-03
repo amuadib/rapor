@@ -22,9 +22,8 @@
         body {
             width: 793.7007874px;
             height: 1247.2440945px;
-            padding: 15px;
+            padding: 30px;
             margin: 0;
-            border: 1px solid red;
             font-family: Arial, Helvetica, sans-serif;
         }
 
