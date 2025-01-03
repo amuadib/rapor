@@ -9,6 +9,11 @@ use Filament\Resources\Pages\EditRecord;
 class EditPelajaran extends EditRecord
 {
     protected static string $resource = PelajaranResource::class;
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
 
     protected function getHeaderActions(): array
     {

@@ -24,7 +24,8 @@ class UstadzResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('niy'),
+                Forms\Components\TextInput::make('niy')
+                    ->label('NIY'),
                 Forms\Components\TextInput::make('nama')
                     ->required(),
                 Forms\Components\TextInput::make('alamat'),
@@ -38,21 +39,13 @@ class UstadzResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('niy')
-                    ->searchable(),
+                    ->label('NIY'),
                 Tables\Columns\TextColumn::make('nama')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('alamat')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('jenis_kelamin')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
@@ -62,9 +55,7 @@ class UstadzResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 
